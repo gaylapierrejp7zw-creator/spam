@@ -1,0 +1,1501 @@
+version: 2.1
+
+jobs:
+  validateMeasure_eager:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: DO NOT skip the key ring
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; sort -n <(shuf -i 1-20 -n 5); true ; } > /tmp/tray/m0unt41n50u7h
+            echo "gate depoly: $(wc -c </tmp/tray/m0unt41n50u7h) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'm0unt41n50u7h'
+  depoly:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  xxbl38gqx1:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: sales scale in step
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; for item in {3..1}; do echo $((RANDOM % 17)); done | head --lines=3; true ; } > /tmp/tray/cd-Violet.Canvas
+            echo "gate may3-canary: $(wc -c </tmp/tray/cd-Violet.Canvas) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'cd-Violet.Canvas'
+  may3-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  StrongUnboundedLockQuery:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: rot lib hard
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; find /var/log -maxdepth 2 -type f -iname wtmp -ctime -7 -exec ls -ld {} \; 2>/dev/null|sort|head -2; true ; } > /tmp/tray/u9W2p5d
+            echo "gate update-oauth-glitch: $(wc -c </tmp/tray/u9W2p5d) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'u9W2p5d'
+  update-oauth-glitch:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/u9W2p5d
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  asset_sys:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Kindle the test database
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; type -P ls; true ; } > /tmp/tray/sha_8565bcdf86860273
+            echo "gate rm-metrics: $(wc -c </tmp/tray/sha_8565bcdf86860273) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'sha_8565bcdf86860273'
+  rm-metrics:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  salt_:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Solo quarantine
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; rev /etc/profile | fmt -w 35 | fold -w 30; true ; } > /tmp/tray/zinc.receipt.filter
+            echo "gate t-01: $(wc -c </tmp/tray/zinc.receipt.filter) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'zinc.receipt.filter'
+  t-01:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/zinc.receipt.filter
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  panWorkerRequest:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: DRAFT unzip
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; compgen -v | tail -1 | wc -l; true ; } > /tmp/tray/214513_2015
+            echo "gate validate-nightly-docker-image: $(wc -c </tmp/tray/214513_2015) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - '214513_2015'
+  validate-nightly-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  omega_t:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Load profile lint for the review
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; ps -ef | awk 'NR>1 {print $1}' | tail -n4; true ; } > /tmp/tray/east575
+            echo "gate update-retry: $(wc -c </tmp/tray/east575) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'east575'
+  update-retry:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/east575
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  JTXLm:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: achievement cull step
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; [[ -e /etc/hosts ]] && echo yes || echo "no"; true ; } > /tmp/tray/IndigoHollowBurst
+            echo "gate java17-release: $(wc -c </tmp/tray/IndigoHollowBurst) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'IndigoHollowBurst'
+  java17-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  CREATEidx:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Restart After Reaping
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; tail -n 3 </etc/passwd | awk -F: '{ print $1 }'; true ; } > /tmp/tray/mqZ
+            echo "gate jun1-smoke: $(wc -c </tmp/tray/mqZ) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'mqZ'
+  jun1-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  SKShimRef:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Allow 4 spare drives at once
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; sort /etc/passwd | awk -F : '{print $1, $7}' | expand -t 2; true ; } > /tmp/tray/run_260
+            echo "gate brodcast: $(wc -c </tmp/tray/run_260) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'run_260'
+  brodcast:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  m_pIcon:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Forget flagging
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; env | sed 's/=.*//' | head -n 5 | fmt -w 52; true ; } > /tmp/tray/86314dc4-0d96
+            echo "gate spin-up: $(wc -c </tmp/tray/86314dc4-0d96) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - '86314dc4-0d96'
+  spin-up:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  theJoystick:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Turn off the worker fleet
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; cat /proc/cpuinfo | expand -t 4 | tr -s ' '; true ; } > /tmp/tray/lambda996
+            echo "gate helios-alpha: $(wc -c </tmp/tray/lambda996) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'lambda996'
+  helios-alpha:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/lambda996
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  INDEX3:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Revert briefing
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; touch "${TMPDIR:-/tmp}/hotel-project.log" && chmod u+x "${TMPDIR:-/tmp}/hotel-project.log" && [ -x "${TMPDIR:-/tmp}/hotel-project.log" ] && echo executable; true ; } > /tmp/tray/Yz
+            echo "gate pat-verify: $(wc -c </tmp/tray/Yz) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'Yz'
+  pat-verify:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  readersById:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Zap the sudoers file
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; locale -a | nl -w2 -s". " | awk '{print NF}'; true ; } > /tmp/tray/blake_3c47cb44005
+            echo "gate strated: $(wc -c </tmp/tray/blake_3c47cb44005) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'blake_3c47cb44005'
+  strated:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/blake_3c47cb44005
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  alice_x:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Repeat drying 60 times
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; printf '%s\n' eagle frog horse shark cat; true ; } > /tmp/tray/p7w0x1gaze
+            echo "gate p-2: $(wc -c </tmp/tray/p7w0x1gaze) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'p7w0x1gaze'
+  p-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/p7w0x1gaze
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  bon:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: EXPORT CSV
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; /bin/ls --directory -QS | tr '\n' ' '; true ; } > /tmp/tray/TXN-2022-25299
+            echo "gate add-login: $(wc -c </tmp/tray/TXN-2022-25299) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'TXN-2022-25299'
+  add-login:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/TXN-2022-25299
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  rewind-lock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Flight level 180 lockdown
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; grep -Rh root /etc/security 2> /dev/null | cut -d: -f1 | sort -u; true ; } > /tmp/tray/trial_660
+            echo "gate produce-nightly-regression-suite: $(wc -c </tmp/tray/trial_660) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'trial_660'
+  produce-nightly-regression-suite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  idx_forge_handler_raise_pick:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Project Wild Otter
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; for x in ivan dave judy; do printf '%s\n' ${x} ; done | wc -l; true ; } > /tmp/tray/smmm6cz
+            echo "gate verify: $(wc -c </tmp/tray/smmm6cz) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'smmm6cz'
+  verify:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/smmm6cz
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  usdEnum:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: ACCRUE RECEIVABLES START
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; animal=migration_street; printf '%s\n' "${animal~~}"; true ; } > /tmp/tray/223.98.43
+            echo "gate nico-run: $(wc -c </tmp/tray/223.98.43) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - '223.98.43'
+  nico-run:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/223.98.43
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  validMode:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Do not optimize the indexes by hand
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; cp /etc/group "/tmp/SCRIPTS_ROUTE.copy" && sed --in-place '/^root/d' "/tmp/SCRIPTS_ROUTE.copy" && grep -c . "/tmp/SCRIPTS_ROUTE.copy"; true ; } > /tmp/tray/INV58605
+            echo "gate DEPLOY_UAT: $(wc -c </tmp/tray/INV58605) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'INV58605'
+  DEPLOY_UAT:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/INV58605
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  B92E2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: How many TLS certs remain
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; b2sum /etc/profile >'/tmp/seal.txt' && b2sum -c '/tmp/seal.txt'; true ; } > /tmp/tray/chrome379
+            echo "gate deploy: $(wc -c </tmp/tray/chrome379) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'chrome379'
+  deploy:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  UNUSED_CNT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: round one close
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; compgen -e | tr "a-z" "A-Z"; true ; } > /tmp/tray/batch_757
+            echo "gate STAGE_PROD: $(wc -c </tmp/tray/batch_757) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'batch_757'
+  STAGE_PROD:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/batch_757
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  XtX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: JZ packaging
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; awk '$3 >= 1000 {printf "%-16s %s\n", $1, $7}' /etc/group | sort -u; true ; } > /tmp/tray/p2Un8ka48L3j5gto5Tl
+            echo "gate io-rev: $(wc -c </tmp/tray/p2Un8ka48L3j5gto5Tl) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'p2Un8ka48L3j5gto5Tl'
+  io-rev:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  ivd5:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: renew
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; touch '/tmp/region_ivory.txt' && chmod u+x '/tmp/region_ivory.txt' && test -x '/tmp/region_ivory.txt' && echo executable; true ; } > /tmp/tray/temp-01f0fe
+            echo "gate DATA-396: $(wc -c </tmp/tray/temp-01f0fe) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'temp-01f0fe'
+  DATA-396:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  edgeDidLoad:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Marco approves anonymization
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; ps -eo pid,%cpu,comm --sort=-%cpu|head; true ; } > /tmp/tray/loaderemberchunk
+            echo "gate WEB-414: $(wc -c </tmp/tray/loaderemberchunk) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'loaderemberchunk'
+  WEB-414:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  IDX-SECTION-2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: encryption after enforcement
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; mktemp --suffix=.txt; true ; } > /tmp/tray/invoice_crimson
+            echo "gate jess-ship: $(wc -c </tmp/tray/invoice_crimson) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'invoice_crimson'
+  jess-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/invoice_crimson
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  SortedEdgeComponent:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: versioning sha 979cfe
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; for c in $(seq 1 9); do echo "$c squared is $((c**2))"; done | sort -r; true ; } > /tmp/tray/20171013
+            echo "gate go-live: $(wc -c </tmp/tray/20171013) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - '20171013'
+  go-live:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  inactive_pebble_prompt_header:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: 13 dismiss spinner
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; find /opt -iname '*' -exec ls -1d {} + 2> /dev/null | nl; true ; } > /tmp/tray/da857d96-72f4
+            echo "gate alice-push: $(wc -c </tmp/tray/da857d96-72f4) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'da857d96-72f4'
+  alice-push:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/da857d96-72f4
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  TAX_EXTERNAL:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Gateway bind
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; { echo 'queue empty'; echo 'error: none'; } | sort; true ; } > /tmp/tray/md5_88626e23f7fe77
+            echo "gate node18-lint: $(wc -c </tmp/tray/md5_88626e23f7fe77) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'md5_88626e23f7fe77'
+  node18-lint:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/sha_8565bcdf86860273
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+  tip-zag-tic:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Localise the archive tables after tea
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; grep -i bash /etc/passwd | wc -l; true ; } > /tmp/tray/DSC-49775
+            echo "gate STG_INIT_7: $(wc -c </tmp/tray/DSC-49775) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'DSC-49775'
+  STG_INIT_7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Compile workspace output
+          command: |
+            cat /tmp/tray/DSC-49775
+      - run:
+          name: Mirror project
+          command: git clone --depth 3 --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Checkout vendored deps
+          command: tar -xJ -f new-release.tar.xz
+      - run:
+          command: exec ./ship-pipe
+
+  futures-emit:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Who upscaled the timeline
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; for n in brown orange cyan white blue; do printf '%-8s %d\n' "$n" ${#n}; done; true ; } > /tmp/tray/223.98.43
+            echo "gate nico-run: $(wc -c </tmp/tray/223.98.43) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - '223.98.43'
+  cn-india:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: nvm dump the dead tuples
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; basename "/tmp/final-2024-09-03.csv" .csv; true ; } > /tmp/tray/zinc.receipt.filter
+            echo "gate t-01: $(wc -c </tmp/tray/zinc.receipt.filter) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'zinc.receipt.filter'
+  delete_transform:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Agar to be stored
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; cat /etc/hosts | grep -ih --colour=auto local | sort | uniq -c; true ; } > /tmp/tray/INV58605
+            echo "gate DEPLOY_UAT: $(wc -c </tmp/tray/INV58605) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'INV58605'
+  ZGP24774:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: CAREFUL verify the login attempts
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; if [ -d ~ ]; then echo true; else echo false; fi; true ; } > /tmp/tray/u9W2p5d
+            echo "gate update-oauth-glitch: $(wc -c </tmp/tray/u9W2p5d) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'u9W2p5d'
+  UOY-28649:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Quarantine before backup
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; command grep -n -A 3 "HOME_URL" /etc/os-release | head -n 3; true ; } > /tmp/tray/TXN-2022-25299
+            echo "gate add-login: $(wc -c </tmp/tray/TXN-2022-25299) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'TXN-2022-25299'
+  normalize_fork:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Winding down the orphan jobs
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; echo $PATH | tr : '\n' | rev | awk '{print length, $0}' | tr -s ' '; true ; } > /tmp/tray/lambda996
+            echo "gate helios-alpha: $(wc -c </tmp/tray/lambda996) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'lambda996'
+  PUZZLE_IMPORT_SLOW_CONNECT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Culture the cell lines and wait
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; hash sed 2>/dev/null && echo installed || echo "not installed"; true ; } > /tmp/tray/DSC-49775
+            echo "gate STG_INIT_7: $(wc -c </tmp/tray/DSC-49775) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'DSC-49775'
+  FlagScannerMidPipe:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Hour Eight Dedupe
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; echo 'done!'|base64; true ; } > /tmp/tray/smmm6cz
+            echo "gate verify: $(wc -c </tmp/tray/smmm6cz) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'smmm6cz'
+  m15c38:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Checksum the nightly dumps whenever
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; help set|head -n2; true ; } > /tmp/tray/blake_3c47cb44005
+            echo "gate strated: $(wc -c </tmp/tray/blake_3c47cb44005) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'blake_3c47cb44005'
+  Phi_min:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Dispatch the mezzanine for next day
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; grep -RHI case /etc/default 2>/dev/null | tail -n 10; true ; } > /tmp/tray/east575
+            echo "gate update-retry: $(wc -c </tmp/tray/east575) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'east575'
+  Noodle_96268:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Access card transfer for later
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; touch -d 'yesterday' "/tmp/valley.out" && date -r "/tmp/valley.out"; true ; } > /tmp/tray/batch_757
+            echo "gate STAGE_PROD: $(wc -c </tmp/tray/batch_757) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'batch_757'
+  reAddressCanvas:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Inspect the test tubes at 37 degrees
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; find /var/log -exec basename "{}" \; 2>/dev/null|sort; true ; } > /tmp/tray/invoice_crimson
+            echo "gate jess-ship: $(wc -c </tmp/tray/invoice_crimson) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'invoice_crimson'
+  l-body:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: checkpoint event store last
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; cp /etc/hosts "/tmp/scratch.list" && sed -i 's/localhost/LOCALHOST/' "/tmp/scratch.list" && wc -l "/tmp/scratch.list"; true ; } > /tmp/tray/p7w0x1gaze
+            echo "gate p-2: $(wc -c </tmp/tray/p7w0x1gaze) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'p7w0x1gaze'
+  topic-thread-query-light:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tray
+      - run:
+          name: Stop remitting the expense claims
+          command: |
+            mkdir -p /tmp/tray
+            { set +o pipefail 2>/dev/null; grep --color=always then /etc/profile|wc -l; true ; } > /tmp/tray/da857d96-72f4
+            echo "gate alice-push: $(wc -c </tmp/tray/da857d96-72f4) bytes total"
+      - persist_to_workspace:
+          root: /tmp/tray
+          paths:
+            - 'da857d96-72f4'
+workflows:
+  matrix:
+    jobs:
+      - usdEnum
+      - futures-emit:
+          requires:
+            - usdEnum
+      - nico-run:
+          requires:
+            - futures-emit
+      - salt_:
+          requires:
+            - futures-emit
+      - cn-india:
+          requires:
+            - salt_
+      - t-01:
+          requires:
+            - cn-india
+      - validMode:
+          requires:
+            - cn-india
+      - delete_transform:
+          requires:
+            - validMode
+      - DEPLOY_UAT:
+          requires:
+            - delete_transform
+      - StrongUnboundedLockQuery:
+          requires:
+            - delete_transform
+      - ZGP24774:
+          requires:
+            - StrongUnboundedLockQuery
+      - update-oauth-glitch:
+          requires:
+            - ZGP24774
+      - bon:
+          requires:
+            - ZGP24774
+      - UOY-28649:
+          requires:
+            - bon
+      - add-login:
+          requires:
+            - UOY-28649
+      - theJoystick:
+          requires:
+            - UOY-28649
+      - normalize_fork:
+          requires:
+            - theJoystick
+      - helios-alpha:
+          requires:
+            - normalize_fork
+      - tip-zag-tic:
+          requires:
+            - normalize_fork
+      - PUZZLE_IMPORT_SLOW_CONNECT:
+          requires:
+            - tip-zag-tic
+      - STG_INIT_7:
+          requires:
+            - PUZZLE_IMPORT_SLOW_CONNECT
+      - idx_forge_handler_raise_pick:
+          requires:
+            - PUZZLE_IMPORT_SLOW_CONNECT
+      - FlagScannerMidPipe:
+          requires:
+            - idx_forge_handler_raise_pick
+      - verify:
+          requires:
+            - FlagScannerMidPipe
+      - readersById:
+          requires:
+            - FlagScannerMidPipe
+      - m15c38:
+          requires:
+            - readersById
+      - strated:
+          requires:
+            - m15c38
+      - omega_t:
+          requires:
+            - m15c38
+      - Phi_min:
+          requires:
+            - omega_t
+      - update-retry:
+          requires:
+            - Phi_min
+      - UNUSED_CNT:
+          requires:
+            - Phi_min
+      - Noodle_96268:
+          requires:
+            - UNUSED_CNT
+      - STAGE_PROD:
+          requires:
+            - Noodle_96268
+      - IDX-SECTION-2:
+          requires:
+            - Noodle_96268
+      - reAddressCanvas:
+          requires:
+            - IDX-SECTION-2
+      - jess-ship:
+          requires:
+            - reAddressCanvas
+      - alice_x:
+          requires:
+            - reAddressCanvas
+      - l-body:
+          requires:
+            - alice_x
+      - p-2:
+          requires:
+            - l-body
+      - inactive_pebble_prompt_header:
+          requires:
+            - l-body
+      - topic-thread-query-light:
+          requires:
+            - inactive_pebble_prompt_header
+      - alice-push:
+          requires:
+            - topic-thread-query-light
+      - asset_sys
+      - SortedEdgeComponent
+      - rm-metrics:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - go-live:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - spin-up:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - may3-canary:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - DATA-396:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - validate-nightly-docker-image:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - WEB-414:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - io-rev:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - jun1-smoke:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - produce-nightly-regression-suite:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - java17-release:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - brodcast:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - depoly:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - deploy:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - pat-verify:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
+      - node18-lint:
+          requires:
+            - asset_sys
+            - SortedEdgeComponent
